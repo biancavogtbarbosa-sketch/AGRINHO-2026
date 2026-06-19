@@ -1,54 +1,37 @@
-// Espera a página carregar
 window.addEventListener("DOMContentLoaded", function () {
 
-    console.log("🌱 Site Agro Sustentável carregado!");
+    const titulo = document.getElementById("titulo");
+    const btn = document.getElementById("btnInfo");
+    const infoBox = document.getElementById("infoBox");
 
-    // Seleciona elementos
-    const titulo = document.querySelector("header h1");
-    const main = document.querySelector("main");
-
-    // 1. Mudar texto do título ao clicar
+    // 🌱 1. Clique no título muda texto
     titulo.addEventListener("click", function () {
-        titulo.textContent = "Agro + Sustentabilidade = Futuro!";
+        titulo.textContent = "🚜 Futuro do Agro é Sustentável!";
     });
 
-    // 2. Criar botão dinamicamente
-    const botao = document.createElement("button");
-    botao.textContent = "Clique para ver uma mensagem";
-    botao.style.marginTop = "20px";
-    botao.style.padding = "10px 20px";
-    botao.style.border = "none";
-    botao.style.borderRadius = "10px";
-    botao.style.cursor = "pointer";
-    botao.style.backgroundColor = "#27ae60";
-    botao.style.color = "white";
-    botao.style.fontSize = "1rem";
+    // 💡 2. Botão interativo com mensagem
+    btn.addEventListener("click", function () {
 
-    main.appendChild(botao);
+        infoBox.style.display = "block";
 
-    botao.addEventListener("click", function () {
-        alert("🌾 A agricultura sustentável ajuda a preservar o solo, a água e o futuro!");
+        infoBox.innerHTML = `
+            🌱 A sustentabilidade no agro garante produção de alimentos sem destruir o planeta.<br><br>
+            💧 Economiza água, preserva o solo e reduz impactos ambientais.<br><br>
+            🌎 Pequenas mudanças no campo geram grandes resultados para o futuro.
+        `;
     });
 
-    // 3. Efeito de destaque no main
-    main.addEventListener("mouseover", function () {
-        main.style.transform = "scale(1.02)";
-        main.style.transition = "0.3s";
+    // 🌿 3. Efeito visual ao passar o mouse no título
+    titulo.addEventListener("mouseover", function () {
+        titulo.style.transform = "scale(1.05)";
+        titulo.style.transition = "0.3s";
     });
 
-    main.addEventListener("mouseout", function () {
-        main.style.transform = "scale(1)";
+    titulo.addEventListener("mouseout", function () {
+        titulo.style.transform = "scale(1)";
     });
 
-    // 4. Modo escuro simples (ao pressionar tecla D)
-    document.addEventListener("keydown", function (event) {
-        if (event.key === "d") {
-            document.body.style.backgroundColor =
-                document.body.style.backgroundColor === "black" ? "#f0f7f4" : "black";
-
-            document.body.style.color =
-                document.body.style.color === "white" ? "#2d3436" : "white";
-        }
-    });
+    // ⚡ 4. Mensagem no console (profissional)
+    console.log("🌱 Projeto Agro Sustentável carregado com sucesso!");
 
 });
