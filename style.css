@@ -1,4 +1,3 @@
-/* Importando uma fonte mais moderna do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
 
 * {
@@ -9,42 +8,100 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f0f7f4;
+    background: #f3f7f4;
     color: #2d3436;
-    line-height: 1.8;
+    line-height: 1.6;
 }
 
+/* HEADER */
 header {
-    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
     color: white;
-    padding: 60px 20px;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 60px 20px;
 }
 
 header h1 {
     font-size: 3rem;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    cursor: pointer;
 }
 
+/* MENU */
+nav {
+    background: #1e8449;
+    padding: 10px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* CONTEÚDO */
 main {
     max-width: 900px;
-    margin: -40px auto 40px auto; /* Efeito de sobreposição */
-    padding: 40px;
+    margin: 30px auto;
     background: white;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+section {
+    margin-bottom: 30px;
 }
 
 h2 {
     color: #27ae60;
-    border-left: 5px solid #27ae60;
-    padding-left: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
-p {
-    margin-bottom: 15px;
-    font-size: 1.1rem;
+ul li {
+    margin-left: 20px;
+    margin-bottom: 8px;
+}
+
+/* BOTÃO */
+button {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: #1e8449;
+}
+
+/* INFO BOX */
+#infoBox {
+    margin-top: 15px;
+    padding: 15px;
+    border-left: 5px solid #27ae60;
+    background: #ecf9f1;
+    display: none;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    background: #2ecc71;
+    color: white;
 }
