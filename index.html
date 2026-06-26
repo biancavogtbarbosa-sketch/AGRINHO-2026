@@ -1,25 +1,22 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro Sustentável - O Futuro é Agora</title>
+    <title>Agro Sustentável</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Botão modo escuro -->
-    <button id="toggleDark" aria-label="Alternar modo escuro">🌙</button>
-
     <header>
         <h1 id="titulo">🌱 Agro Sustentável</h1>
         <p>Produzir alimentos com respeito ao meio ambiente</p>
-        <a href="#praticas" class="btn-header">🌾 Comece agora</a>
+        <button id="toggleTheme">🌙 Modo Escuro</button>
     </header>
 
-    <nav id="navbar">
+    <nav>
         <ul>
-            <li><a href="#o-que-e">O que é</a></li>
+            <li><a href="#sobre">O que é</a></li>
             <li><a href="#tecnologia">Tecnologia</a></li>
             <li><a href="#impactos">Impactos</a></li>
             <li><a href="#praticas">Práticas</a></li>
@@ -28,36 +25,23 @@
     </nav>
 
     <main>
-        <section id="o-que-e" class="card">
-            <div class="card-icon">🌱</div>
-            <h2>O que é Agro Sustentável?</h2>
-            <p>A agropecuária sustentável é um modelo que busca equilibrar produtividade e preservação ambiental, garantindo alimentos sem destruir recursos naturais.</p>
-            <p><strong>Benefícios:</strong> Solo fértil, água limpa, biodiversidade e clima equilibrado.</p>
+        <section id="sobre" class="card">
+            <h2>🌱 O que é Agro Sustentável?</h2>
+            <p>A agropecuária sustentável é um modelo de produção que busca equilibrar produtividade e preservação ambiental, garantindo alimentos sem destruir os recursos naturais.</p>
         </section>
 
         <section id="tecnologia" class="card">
-            <div class="card-icon">🚜</div>
-            <h2>Tecnologia no Campo</h2>
-            <p>Drones, sensores, irrigação inteligente e máquinas modernas reduzem desperdícios e aumentam a eficiência.</p>
-            <div class="stats">
-                <div class="stat">
-                    <span class="stat-number" data-target="30">0</span><span>% menos água</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number" data-target="50">0</span><span>% mais produtividade</span>
-                </div>
-            </div>
+            <h2>🚜 Tecnologia no Campo</h2>
+            <p>Drones, sensores, irrigação inteligente e máquinas modernas ajudam a reduzir desperdícios e aumentar a eficiência na produção agrícola.</p>
         </section>
 
         <section id="impactos" class="card">
-            <div class="card-icon">🌎</div>
-            <h2>Impactos Ambientais</h2>
-            <p>O uso consciente do solo e da água reduz desmatamento, poluição e emissão de gases do efeito estufa.</p>
+            <h2>🌎 Impactos Ambientais</h2>
+            <p>O uso consciente do solo e da água reduz o desmatamento, a poluição e a emissão de gases que contribuem para o aquecimento global.</p>
         </section>
 
         <section id="praticas" class="card">
-            <div class="card-icon">🌾</div>
-            <h2>Práticas Sustentáveis</h2>
+            <h2>🌾 Práticas Sustentáveis</h2>
             <ul>
                 <li>Rotação de culturas</li>
                 <li>Agricultura orgânica</li>
@@ -67,27 +51,46 @@
             </ul>
         </section>
 
-        <!-- Depoimento (placeholders) -->
-        <section class="card depoimento">
-            <h2>💬 O que dizem</h2>
-            <blockquote>
-                "A sustentabilidade transformou nossa fazenda. Hoje produzimos mais com menos impacto."
-                <cite>— Maria, agricultora familiar</cite>
-            </blockquote>
+        <section id="beneficios" class="card">
+            <h2>✅ Benefícios</h2>
+            <p>Alimento mais saudável, solo fértil por mais tempo, redução de custos com insumos, preservação da biodiversidade e combate às mudanças climáticas.</p>
         </section>
 
-        <!-- Botão interativo -->
-        <div class="centro">
-            <button id="btnInfo">💡 Ver mensagem sustentável</button>
-            <div id="infoBox"></div>
-            <p style="margin-top:10px; font-size:0.9rem; color:#555;">Mensagem exibida <span id="clickCount">0</span> vezes</p>
-        </div>
+        <section id="dados" class="card">
+            <h2>📊 Dados Importantes</h2>
+            <p>Segundo a FAO, a agricultura sustentável pode aumentar a produtividade em até 20% nos próximos 10 anos, além de reduzir em 30% o uso de água.</p>
+        </section>
+
+        <section id="depoimento" class="card">
+            <h2>💬 Depoimento</h2>
+            <blockquote>"Adotar práticas sustentáveis transformou minha propriedade. Hoje produzo mais gastando menos e ainda cuido do meio ambiente." – João, agricultor familiar.</blockquote>
+        </section>
+
+        <section id="contato" class="card">
+            <h2>📧 Fale Conosco</h2>
+            <form id="formContato">
+                <input type="text" placeholder="Seu nome" required>
+                <input type="email" placeholder="Seu e-mail" required>
+                <textarea rows="3" placeholder="Sua mensagem" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+            <p id="formFeedback"></p>
+        </section>
+
+        <button id="btnInfo">💡 Ver mensagem sustentável</button>
+        <div id="infoBox"></div>
     </main>
 
     <footer>
         <p>Projeto Agro Sustentável © 2026</p>
-        <p><small>🌍 Cultivando o futuro, um passo de cada vez.</small></p>
     </footer>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modalMessage"></p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
