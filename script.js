@@ -1,97 +1,79 @@
 window.addEventListener("DOMContentLoaded", function () {
-
-    // Elementos
     const titulo = document.getElementById("titulo");
-    const btn = document.getElementById("btnInfo");
+    const btnInfo = document.getElementById("btnInfo");
     const infoBox = document.getElementById("infoBox");
-    const clickCountSpan = document.getElementById("clickCount");
-    const toggleDark = document.getElementById("toggleDark");
-    let clickCount = 0;
+    const modal = document.getElementById("modal");
+    const modalMessage = document.getElementById("modalMessage");
+    const closeModal = document.querySelector(".close");
+    const toggleTheme = document.getElementById("toggleTheme");
+    const form = document.getElementById("formContato");
+    const formFeedback = document.getElementById("formFeedback");
 
-    // ========== 1. TÍTULO INTERATIVO ==========
+    // 1. Clique no título muda texto
     titulo.addEventListener("click", function () {
         titulo.textContent = "🚜 Futuro do Agro é Sustentável!";
-        titulo.style.color = "#fff";
     });
 
-    titulo.addEventListener("mouseover", function () {
-        titulo.style.transform = "scale(1.08)";
-        titulo.style.transition = "0.3s";
-    });
-
-    titulo.addEventListener("mouseout", function () {
-        titulo.style.transform = "scale(1)";
-    });
-
-    // ========== 2. BOTÃO MENSAGEM ==========
-    btn.addEventListener("click", function () {
-        clickCount++;
-        clickCountSpan.textContent = clickCount;
-
-        infoBox.style.display = "block";
-        infoBox.innerHTML = `
-            🌱 A sustentabilidade no agro garante produção de alimentos sem destruir o planeta.<br><br>
-            💧 Economiza água, preserva o solo e reduz impactos ambientais.<br><br>
+    // 2. Botão abre modal com mensagem
+    btnInfo.addEventListener("click", function () {
+        modalMessage.innerHTML = `
+            🌱 A sustentabilidade no agro garante produção de alimentos sem destruir o planeta.<br>
+            💧 Economiza água, preserva o solo e reduz impactos ambientais.<br>
             🌎 Pequenas mudanças no campo geram grandes resultados para o futuro.
         `;
+        modal.style.display = "flex";
     });
 
-    // ========== 3. MODO ESCURO ==========
-    toggleDark.addEventListener("click", function () {
+    // Fechar modal
+    closeModal.addEventListener("click", function () {
+        modal.style.display = "none";
+    });
+
+    window.addEventListener("click", function (e) {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+
+    // 3. Modo escuro
+    toggleTheme.addEventListener("click", function () {
         document.body.classList.toggle("dark");
-        toggleDark.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+        toggleTheme.textContent = document.body.classList.contains("dark") ? "☀️ Modo Claro" : "🌙 Modo Escuro";
     });
 
-    // ========== 4. ANIMAÇÃO DE CONTADORES (ESTATÍSTICAS) ==========
-    const statNumbers = document.querySelectorAll(".stat-number");
-
-    function animateCounters() {
-        statNumbers.forEach(stat => {
-            const target = parseInt(stat.getAttribute("data-target"));
-            const increment = target / 50; // 50 passos
-            let current = 0;
-
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(timer);
-                }
-                stat.textContent = Math.floor(current);
-            }, 30);
+    // 4. Scroll suave nos links do menu
+    document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+                target.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
         });
-    }
+    });
 
-    // Dispara a animação quando a seção de tecnologia estiver visível
-    const techSection = document.getElementById("tecnologia");
+    // 5. Animação fade-in ao scroll (já feita no CSS, mas forçar recalculo)
+    const cards = document.querySelectorAll(".card");
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                animateCounters();
-                observer.unobserve(entry.target);
+                entry.target.style.animation = "none";
+                entry.target.offsetHeight; // reflow
+                entry.target.style.animation = "fadeInUp 0.6s forwards";
             }
         });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.2 });
 
-    observer.observe(techSection);
+    cards.forEach(card => observer.observe(card));
 
-    // ========== 5. SCROLL SUAVE PARA NAVEGAÇÃO ==========
-    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
+    // 6. Formulário simples
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        formFeedback.textContent = "✅ Mensagem enviada com sucesso!";
+        form.reset();
+        setTimeout(() => formFeedback.textContent = "", 4000);
     });
 
-    // ========== 6. CONSOLE PROFISSIONAL ==========
+    // 7. Console profissional
     console.log("🌱 Projeto Agro Sustentável carregado com sucesso!");
-    console.log("✨ Modo escuro disponível");
-    console.log("📊 Contadores animados");
-
 });
