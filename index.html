@@ -3,94 +3,390 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro Sustentável</title>
+    <meta name="description" content="Agro e Sustentabilidade - O equilíbrio entre produção e preservação">
+    <title>Agro Sustentável | O Futuro do Campo</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+    
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1 id="titulo">🌱 Agro Sustentável</h1>
-        <p>Produzir alimentos com respeito ao meio ambiente</p>
-        <button id="toggleTheme">🌙 Modo Escuro</button>
+    <!-- HEADER / NAVIGATION -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-logo">
+                <span class="logo-icon">🌱</span>
+                <span class="logo-text">Agro Sustentável</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link">Início</a></li>
+                <li><a href="#dados" class="nav-link">Dados</a></li>
+                <li><a href="#timeline" class="nav-link">História</a></li>
+                <li><a href="#calculadora" class="nav-link">Calculadora</a></li>
+                <li><a href="#repertorio" class="nav-link">Conceitos</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+                <svg class="sun-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#sobre">O que é</a></li>
-            <li><a href="#tecnologia">Tecnologia</a></li>
-            <li><a href="#impactos">Impactos</a></li>
-            <li><a href="#praticas">Práticas</a></li>
-            <li><a href="#contato">Contato</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <section id="sobre" class="card">
-            <h2>🌱 O que é Agro Sustentável?</h2>
-            <p>A agropecuária sustentável é um modelo de produção que busca equilibrar produtividade e preservação ambiental, garantindo alimentos sem destruir os recursos naturais.</p>
-        </section>
-
-        <section id="tecnologia" class="card">
-            <h2>🚜 Tecnologia no Campo</h2>
-            <p>Drones, sensores, irrigação inteligente e máquinas modernas ajudam a reduzir desperdícios e aumentar a eficiência na produção agrícola.</p>
-        </section>
-
-        <section id="impactos" class="card">
-            <h2>🌎 Impactos Ambientais</h2>
-            <p>O uso consciente do solo e da água reduz o desmatamento, a poluição e a emissão de gases que contribuem para o aquecimento global.</p>
-        </section>
-
-        <section id="praticas" class="card">
-            <h2>🌾 Práticas Sustentáveis</h2>
-            <ul>
-                <li>Rotação de culturas</li>
-                <li>Agricultura orgânica</li>
-                <li>Uso de energia solar</li>
-                <li>Reaproveitamento de água</li>
-                <li>Controle biológico de pragas</li>
-            </ul>
-        </section>
-
-        <section id="beneficios" class="card">
-            <h2>✅ Benefícios</h2>
-            <p>Alimento mais saudável, solo fértil por mais tempo, redução de custos com insumos, preservação da biodiversidade e combate às mudanças climáticas.</p>
-        </section>
-
-        <section id="dados" class="card">
-            <h2>📊 Dados Importantes</h2>
-            <p>Segundo a FAO, a agricultura sustentável pode aumentar a produtividade em até 20% nos próximos 10 anos, além de reduzir em 30% o uso de água.</p>
-        </section>
-
-        <section id="depoimento" class="card">
-            <h2>💬 Depoimento</h2>
-            <blockquote>"Adotar práticas sustentáveis transformou minha propriedade. Hoje produzo mais gastando menos e ainda cuido do meio ambiente." – João, agricultor familiar.</blockquote>
-        </section>
-
-        <section id="contato" class="card">
-            <h2>📧 Fale Conosco</h2>
-            <form id="formContato">
-                <input type="text" placeholder="Seu nome" required>
-                <input type="email" placeholder="Seu e-mail" required>
-                <textarea rows="3" placeholder="Sua mensagem" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-            <p id="formFeedback"></p>
-        </section>
-
-        <button id="btnInfo">💡 Ver mensagem sustentável</button>
-        <div id="infoBox"></div>
-    </main>
-
-    <footer>
-        <p>Projeto Agro Sustentável © 2026</p>
-    </footer>
-
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p id="modalMessage"></p>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-line">O Campo</span>
+                <span class="title-line">do Futuro</span>
+                <span class="title-line highlight">é Sustentável</span>
+            </h1>
+            <p class="hero-subtitle">
+                Descubra como tecnologia e preservação caminham juntas para alimentar o mundo sem comprometer o planeta.
+            </p>
+            <a href="#dados" class="hero-cta">
+                <span>Explorar Dados</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
         </div>
-    </div>
+        <div class="scroll-indicator">
+            <span>Role para descobrir</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- DADOS SECTION -->
+    <section id="dados" class="dados section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Dados Reais</span>
+                <h2 class="section-title">O Agro que Preserva</h2>
+                <p class="section-description">
+                    Números que mostram como a agricultura brasileira evoluiu para se tornar referência mundial em sustentabilidade.
+                </p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card" data-aos="fade-up">
+                    <div class="stat-icon">🌳</div>
+                    <div class="stat-number" data-target="66">0</div>
+                    <div class="stat-suffix">milhões</div>
+                    <div class="stat-label">Hectares de vegetação nativa preservados em propriedades rurais</div>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-icon">💧</div>
+                    <div class="stat-number" data-target="70">0</div>
+                    <div class="stat-suffix">%</div>
+                    <div class="stat-label">Da energia consumida no agro vem de fontes renováveis</div>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-icon">🌾</div>
+                    <div class="stat-number" data-target="400">0</div>
+                    <div class="stat-suffix">%</div>
+                    <div class="stat-label">Aumento da produtividade da soja nos últimos 30 anos</div>
+                </div>
+            </div>
+            <div class="chart-container">
+                <canvas id="emissionsChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMELINE SECTION -->
+    <section id="timeline" class="timeline section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Evolução</span>
+                <h2 class="section-title">Marcos do Agro Sustentável</h2>
+                <p class="section-description">
+                    Uma jornada de inovação e compromisso com o meio ambiente.
+                </p>
+            </div>
+            <div class="timeline-wrapper">
+                <div class="timeline-line"></div>
+                <div class="timeline-items">
+                    <div class="timeline-item" data-year="1973">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-year">1973</span>
+                            <h3 class="timeline-title">Criação da Embrapa</h3>
+                            <p class="timeline-description">
+                                Fundação da Empresa Brasileira de Pesquisa Agropecuária, revolucionando a agricultura tropical.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-year="1990">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-year">1990</span>
+                            <h3 class="timeline-title">Plantio Direto</h3>
+                            <p class="timeline-description">
+                                Expansão do sistema de plantio direto, reduzindo erosão e melhorando a qualidade do solo.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-year="2008">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-year">2008</span>
+                            <h3 class="timeline-title">Programa ABC</h3>
+                            <p class="timeline-description">
+                                Lançamento do Plano Agricultura de Baixa Carbono, financiando tecnologias sustentáveis.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-year="2010">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-year">2010</span>
+                            <h3 class="timeline-title">Código Florestal</h3>
+                            <p class="timeline-description">
+                                Nova legislação ambiental fortalecendo a proteção de áreas de preservação permanente.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-year="2020">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-year">2020</span>
+                            <h3 class="timeline-title">Agro 4.0</h3>
+                            <p class="timeline-description">
+                                Consolidação da agricultura digital com IoT, drones e inteligência artificial no campo.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-year="2024">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-year">2024</span>
+                            <h3 class="timeline-title">Plano Safra Verde</h3>
+                            <p class="timeline-description">
+                                Recorde de investimentos em práticas sustentáveis e agricultura regenerativa.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALCULADORA SECTION -->
+    <section id="calculadora" class="calculadora section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Calcule Seu Impacto</span>
+                <h2 class="section-title">Calculadora de Sustentabilidade</h2>
+                <p class="section-description">
+                    Descubra quanto você pode economizar adotando práticas sustentáveis.
+                </p>
+            </div>
+            <div class="calculator-card">
+                <form class="calculator-form" id="calculatorForm">
+                    <div class="form-group">
+                        <label for="area">Área cultivada (hectares)</label>
+                        <input type="number" id="area" min="1" max="10000" required placeholder="Ex: 50">
+                    </div>
+                    <div class="form-group">
+                        <label for="cultura">Tipo de cultura</label>
+                        <select id="cultura" required>
+                            <option value="">Selecione...</option>
+                            <option value="soja">Soja</option>
+                            <option value="milho">Milho</option>
+                            <option value="cafe">Café</option>
+                            <option value="cana">Cana-de-açúcar</option>
+                            <option value="algodao">Algodão</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="pratica">Prática sustentável</label>
+                        <select id="pratica" required>
+                            <option value="">Selecione...</option>
+                            <option value="plantio_direto">Plantio Direto</option>
+                            <option value="ilpf">Integração Lavoura-Pecuária-Floresta</option>
+                            <option value="irrigacao">Irrigação de Precisão</option>
+                            <option value="fbn">Fixação Biológica de Nitrogênio</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-calculate">
+                        <span>Calcular Impacto</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </form>
+                <div class="calculator-result" id="calculatorResult">
+                    <div class="result-item">
+                        <div class="result-icon">💧</div>
+                        <div class="result-data">
+                            <span class="result-value" id="waterSaved">0</span>
+                            <span class="result-unit">mil litros de água economizados/ano</span>
+                        </div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-icon">🌱</div>
+                        <div class="result-data">
+                            <span class="result-value" id="carbonSaved">0</span>
+                            <span class="result-unit">toneladas de CO₂ evitadas/ano</span>
+                        </div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-icon">🌳</div>
+                        <div class="result-data">
+                            <span class="result-value" id="treesEquivalent">0</span>
+                            <span class="result-unit">árvores equivalentes plantadas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REPERTÓRIO SECTION -->
+    <section id="repertorio" class="repertorio section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Conceitos</span>
+                <h2 class="section-title">Pilares da Agricultura Sustentável</h2>
+                <p class="section-description">
+                    Entenda as práticas que estão transformando o campo brasileiro.
+                </p>
+            </div>
+            <div class="concepts-grid">
+                <div class="concept-card" data-concept="regenerativa">
+                    <div class="concept-header">
+                        <div class="concept-icon">🔄</div>
+                        <h3 class="concept-title">Agricultura Regenerativa</h3>
+                        <button class="concept-toggle" aria-label="Expandir">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="concept-content">
+                        <p>
+                            Sistema que vai além da sustentabilidade: regenera o solo, aumenta a biodiversidade e melhora o ciclo da água.
+                        </p>
+                        <ul class="concept-list">
+                            <li>Cobertura permanente do solo</li>
+                            <li>Rotação diversificada de culturas</li>
+                            <li>Integração com pecuária</li>
+                            <li>Redução ou eliminação de aração</li>
+                        </ul>
+                        <div class="concept-stat">
+                            <span class="stat-number">40%</span>
+                            <span class="stat-label">mais carbono capturado no solo</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="concept-card" data-concept="ilpf">
+                    <div class="concept-header">
+                        <div class="concept-icon">🌳</div>
+                        <h3 class="concept-title">ILPF - Integração Lavoura-Pecuária-Floresta</h3>
+                        <button class="concept-toggle" aria-label="Expandir">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="concept-content">
+                        <p>
+                            Sistema que combina diferentes atividades agrícolas na mesma área, promovendo sinergia entre elas.
+                        </p>
+                        <ul class="concept-list">
+                            <li>Árvores consorciadas com culturas</li>
+                            <li>Pastejo rotacionado</li>
+                            <li>Melhor uso da terra</li>
+                            <li>Diversificação de renda</li>
+                        </ul>
+                        <div class="concept-stat">
+                            <span class="stat-number">11M</span>
+                            <span class="stat-label">hectares já implementados no Brasil</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="concept-card" data-concept="fbn">
+                    <div class="concept-header">
+                        <div class="concept-icon">🧬</div>
+                        <h3 class="concept-title">Fixação Biológica de Nitrogênio</h3>
+                        <button class="concept-toggle" aria-label="Expandir">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="concept-content">
+                        <p>
+                            Uso de bactérias que capturam nitrogênio do ar e o disponibilizam para as plantas, reduzindo fertilizantes químicos.
+                        </p>
+                        <ul class="concept-list">
+                            <li>Inoculação de sementes</li>
+                            <li>Redução de custos com fertilizantes</li>
+                            <li>Menor impacto ambiental</li>
+                            <li>Aumento da produtividade</li>
+                        </ul>
+                        <div class="concept-stat">
+                            <span class="stat-number">R$ 18B</span>
+                            <span class="stat-label">economizados anualmente no Brasil</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon">🌱</span>
+                    <span class="logo-text">Agro Sustentável</span>
+                </div>
+                <p class="footer-text">
+                    O futuro do agro é sustentável, tecnológico e inclusivo.
+                </p>
+                <div class="footer-links">
+                    <a href="#hero">Início</a>
+                    <a href="#dados">Dados</a>
+                    <a href="#timeline">História</a>
+                    <a href="#calculadora">Calculadora</a>
+                    <a href="#repertorio">Conceitos</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Agro Sustentável. Todos os direitos reservados.</p>
+                <p>Feito com 💚 para um futuro melhor</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
